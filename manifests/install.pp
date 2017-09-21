@@ -71,6 +71,7 @@ class docker::install {
     }
   }
 
+  notify {"DOCKER MANAGE PACKAGE: ${docker::manage_package}": }
   if $docker::manage_package {
 
     if empty($docker::repo_opt) {
@@ -108,6 +109,7 @@ class docker::install {
         default => $docker::package_name,
       }
 
+      notify {"DOCKER PACKAGE: ${pkg_name}": }
       ensure_resource('package', 'docker', merge($docker_hash, {
         ensure => $ensure,
         name   => $pkg_name,
