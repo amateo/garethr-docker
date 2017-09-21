@@ -427,6 +427,7 @@ class docker(
   $package_source                    = $docker::params::package_source,
   $manage_epel                       = $docker::params::manage_epel,
   $package_name                      = $docker::params::package_name,
+  $package_ce_name                   = $docker::params::package_ce_name,
   $service_name                      = $docker::params::service_name,
   $docker_command                    = $docker::params::docker_command,
   $docker_ce_command                 = $docker::params::docker_ce_command,
